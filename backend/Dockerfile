@@ -12,6 +12,4 @@ COPY . .
 
 # Exposer le port
 EXPOSE 3000
-
-# Lancer l'application
 CMD ["python", "app.py"]

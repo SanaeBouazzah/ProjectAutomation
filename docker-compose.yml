@@ -1,8 +1,18 @@
 version: '3.9'
 
 services:
-  web:
-    build: .
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - FLASK_ENV=development
+
+  frontend:
+    build: ./frontend/react-app
     ports:
       - "3000:3000"
-    restart: always
+    volumes:
+      - ./frontend/react-app:/app
